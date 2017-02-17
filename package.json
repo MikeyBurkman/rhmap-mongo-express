@@ -23,7 +23,7 @@
   "devDependencies": {
     "prettier": "^0.18.0"
   },
-  "main": "application.js",
+  "main": "lib/application.js",
   "scripts": {
     "start": "node lib/application.js",
     "pretty": "prettier --write --single-quote 'lib/**/*.js'"
