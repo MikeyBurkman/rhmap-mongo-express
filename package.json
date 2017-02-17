@@ -23,9 +23,9 @@
   "devDependencies": {
     "prettier": "^0.18.0"
   },
-  "main": "lib/application.js",
+  "main": "application.js",
   "scripts": {
-    "start": "node lib/application.js",
+    "start": "node application.js",
     "pretty": "prettier --write --single-quote 'lib/**/*.js'"
   },
   "license": "MIT"
