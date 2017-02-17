@@ -20,10 +20,13 @@
     "rhmap-auth": "^1.0.1",
     "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^0.18.0"
+  },
   "main": "application.js",
   "scripts": {
-    "start": "node application.js"
+    "start": "node lib/application.js",
+    "pretty": "prettier --write --single-quote 'lib/**/*.js'"
   },
   "license": "MIT"
 }

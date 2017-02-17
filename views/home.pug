@@ -1,45 +1,44 @@
 extends layout
 
 block content
-    div.container
-        h1 DataBowser 9000
-        if databases.length > 0
-            h3 Available Databases
-            table.table.table-hover
-                tr
-                    th Name
-                    th Env
-                    th
-                    th
-                    th DELETE???
-                each db in databases
-                    tr
-                        - var roPath = db.roPath;
-                        - var edPath = db.edPath;
-                        - var name = db.name;
-                        - var env = db.env;
-                        - var url = db.url;
-                        td= name
-                        td= env
-                        td: a(href=`${roPath}` target="blank") Readonly
-                        td: a(href=`${edPath}` target="blank") EDITABLE
-                        td
-                            form(action='/home', method='POST')
-                                input(type='hidden' name='action' value='delete')
-                                input(type='hidden' name='name' value=`${name}`)
-                                input(type='hidden' name='mongourl' value=`${url}`)
-                                button(class='btn btn-danger', type='submit') 
-                                span.clearfix
+  div.container
+    h1 DataBowser 9000
+    if databases.length === 0
+      h3 No databases have been set up!
+    else
+      h3 Available Databases
+      table.table.table-hover
+        tr
+          th Name
+          th Env
+          th
+          th
+          th DELETE???
+        each db in databases
+          tr
+            - var roPath = db.roPath;
+            - var edPath = db.edPath;
+            - var name = db.name;
+            - var env = db.env;
+            - var url = db.url;
+            td= name
+            td= env
+            td: a(href=`${roPath}` target="blank") Readonly
+            td: a(href=`${edPath}` target="blank") EDITABLE
+            td
+              form(action='/home', method='POST')
+                input(type='hidden' name='action' value='delete')
+                input(type='hidden' name='name' value=`${name}`)
+                input(type='hidden' name='mongourl' value=`${url}`)
+                button(class='btn btn-danger', type='submit')
+                span.clearfix
 
-        else
-            h3 No databases have been set up!
-        
-        form(action='/home', method='POST')
-            h3 Add a new database 
-            h5 (Requires a manual restart of the application after being added)
-            input(type='hidden' name='action' value='add')
-            input(type='text', name='name' class='form-control', placeholder='Name', required)
-            input(type='text', name='env' class='form-control', placeholder='Env', required)
-            input(type='text', name='mongourl' class='form-control', placeholder='Mongo URL', required)
-            button(class='btn btn-lg btn-primary btn-block', type='submit') Add New Database
-            span.clearfix
+      form(action='/home', method='POST')
+        h3 Add a new database
+        h5 (Requires a manual restart of the application after being added)
+        input(type='hidden' name='action' value='add')
+        input(type='text', name='name' class='form-control', placeholder='Name', required)
+        input(type='text', name='env' class='form-control', placeholder='Env', required)
+        input(type='text', name='mongourl' class='form-control', placeholder='Mongo URL', required)
+        button(class='btn btn-lg btn-primary btn-block', type='submit') Add New Database
+        span.clearfix
