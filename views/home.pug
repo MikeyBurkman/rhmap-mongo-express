@@ -33,12 +33,12 @@ block content
                 button(class='btn btn-danger', type='submit')
                 span.clearfix
 
-      form(action='/home', method='POST')
-        h3 Add a new database
-        h5 (Requires a manual restart of the application after being added)
-        input(type='hidden' name='action' value='add')
-        input(type='text', name='name' class='form-control', placeholder='Name', required)
-        input(type='text', name='env' class='form-control', placeholder='Env', required)
-        input(type='text', name='mongourl' class='form-control', placeholder='Mongo URL', required)
-        button(class='btn btn-lg btn-primary btn-block', type='submit') Add New Database
-        span.clearfix
+    form(action='/home', method='POST')
+      h3 Add a new database
+      h5 (Requires a manual restart of the application after being added)
+      input(type='hidden' name='action' value='add')
+      input(type='text', name='name' class='form-control', placeholder='Name', required)
+      input(type='text', name='env' class='form-control', placeholder='Env', required)
+      input(type='text', name='mongourl' class='form-control', placeholder='Mongo URL', required)
+      button(class='btn btn-lg btn-primary btn-block', type='submit') Add New Database
+      span.clearfix
