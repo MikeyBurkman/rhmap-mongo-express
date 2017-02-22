@@ -9,6 +9,7 @@ block content
       h3 Available Databases
       table.table.table-hover
         tr
+          th
           th Name
           th Env
           th
@@ -21,6 +22,9 @@ block content
             - var name = db.name;
             - var env = db.env;
             - var url = db.url;
+            td
+              if badlist[name]
+                span.glyphicon.glyphicon-exclamation-sign
             td= name
             td= env
             td: a(href=`${roPath}` target="blank") Readonly
