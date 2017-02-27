@@ -10,7 +10,7 @@
     "express": "~4.2.0",
     "express-session": "^1.15.1",
     "fh-mbaas-api": "6.0.1",
-    "mongo-express": "0.37.2",
+    "mongo-express": "^0.38.0",
     "parse-mongo-url": "~1.1.1",
     "passport": "~0.2.2",
     "passport-http": "~0.3.0",
