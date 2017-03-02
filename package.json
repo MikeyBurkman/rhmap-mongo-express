@@ -21,6 +21,7 @@
     "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.0.0"
   },
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "prettier": "^0.18.0"
   },
   "main": "application.js",
@@ -28,5 +29,6 @@
     "start": "node application.js",
     "pretty": "prettier --write --single-quote 'lib/**/*.js'"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "pre-commit": "pretty"
 }
