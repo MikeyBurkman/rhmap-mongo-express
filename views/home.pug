@@ -27,8 +27,8 @@ block content
                 span.glyphicon.glyphicon-exclamation-sign
             td= name
             td= env
-            td: a(href=`${roPath}` target="blank") Readonly
-            td: a(href=`${edPath}` target="blank") EDITABLE
+            td: a(href=`${roPath}` target="_blank") Readonly
+            td: a(href=`${edPath}` target="_blank") EDITABLE
             td
               form(action='/home', method='POST')
                 input(type='hidden' name='action' value='delete')
