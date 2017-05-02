@@ -18,7 +18,7 @@
     "pug": "~2.0.0-beta11",
     "request": "~2.40.0",
     "rhmap-auth": "^1.0.1",
-    "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.0.0"
+    "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.1.0"
   },
   "devDependencies": {
     "pre-commit": "^1.2.2",
