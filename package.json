@@ -10,7 +10,7 @@
     "express": "~4.2.0",
     "express-session": "^1.15.1",
     "fh-mbaas-api": "6.0.1",
-    "mongo-express": "~0.38.0",
+    "mongo-express": "~0.40.0",
     "parse-mongo-url": "~1.1.1",
     "passport": "~0.2.2",
     "passport-http": "~0.3.0",
@@ -18,17 +18,29 @@
     "pug": "~2.0.0-beta11",
     "request": "~2.40.0",
     "rhmap-auth": "^1.0.1",
-    "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.0.0"
+    "rhmap-mongodb": "MikeyBurkman/rhmap-mongodb#v2.1.0"
   },
   "devDependencies": {
-    "pre-commit": "^1.2.2",
-    "prettier": "^0.18.0"
+    "eslint": "~3.18.0",
+    "husky": "~0.13.3",
+    "lint-staged": "~3.4.1",
+    "prettier": "^0.18.0",
+    "prettier-eslint-cli": "~3.4.2"
   },
   "main": "application.js",
   "scripts": {
     "start": "node application.js",
-    "pretty": "prettier --write --single-quote 'lib/**/*.js'"
+    "lint": "eslint $(find ./lib -name '*.js')",
+    "pretty": "prettier --write --single-quote 'lib/**/*.js'",
+    "precommit": "lint-staged"
   },
   "license": "MIT",
-  "pre-commit": "pretty"
+  "pre-commit": "pretty",
+  "description": "mongo-express wrapper for RHMAP",
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write --prettier.single-quote --prettier.print-width=100",
+      "git add"
+    ]
+  }
 }
